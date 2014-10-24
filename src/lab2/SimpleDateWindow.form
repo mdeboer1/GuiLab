@@ -45,9 +45,9 @@
               <EmptySpace pref="68" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="121" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="89" max="32767" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,9 +66,9 @@
               </Group>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="28" max="32767" attributes="0"/>
+              <EmptySpace pref="36" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -81,7 +81,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="startDate">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ex: 1/1/2014"/>
+        <Property name="text" type="java.lang.String" value="1/1/2014 0:00:00"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startDateActionPerformed"/>
@@ -97,7 +97,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="The current order date is: "/>
+        <Property name="text" type="java.lang.String" value="                                                         "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -107,7 +107,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="endDate">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ex: 2/2/2014"/>
+        <Property name="text" type="java.lang.String" value="1/2/2014 0:00:00"/>
       </Properties>
     </Component>
   </SubComponents>

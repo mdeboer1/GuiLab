@@ -42,7 +42,7 @@ public class SimpleDateWindow extends javax.swing.JFrame {
 
         jLabel1.setText(" Start date/time");
 
-        startDate.setText("ex: 1/1/2014");
+        startDate.setText("1/1/2014 0:00:00");
         startDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startDateActionPerformed(evt);
@@ -56,11 +56,11 @@ public class SimpleDateWindow extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("The current order date is: ");
+        jLabel2.setText("                                                         ");
 
         jLabel3.setText("End date/time");
 
-        endDate.setText("ex: 2/2/2014");
+        endDate.setText("1/2/2014 0:00:00");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,9 +82,9 @@ public class SimpleDateWindow extends javax.swing.JFrame {
                             .addComponent(endDate))))
                 .addContainerGap(68, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 121, Short.MAX_VALUE)
+                .addGap(0, 89, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(122, 122, 122))
+                .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,9 +99,9 @@ public class SimpleDateWindow extends javax.swing.JFrame {
                     .addComponent(endDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addComponent(jButton1)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,18 +109,21 @@ public class SimpleDateWindow extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        DateDifference start = new DateDifference();
-        DateDifference end = new DateDifference();
+        DateDifference dateDiff = new DateDifference();
+//        DateDifference end = new DateDifference();
         String dateStartValue = startDate.getText();
         String dateEndValue = endDate.getText();
         try{
-            start.setStringToStartDate(dateStartValue, "M/d/yyyy h:mm:ss a");
-            end.setStringToEndDate(dateEndValue, "M/d/yyyy h:mm:ss a");
-            jLabel2.setText(jLabel2.getText() + order.getFormattedDate("M/d/yyyy h:mm:ss a"));
+            dateDiff.setDateTimes(dateStartValue, dateEndValue, "M/d/yyyy h:mm:ss");
+//            end.setStringToEndDate(dateEndValue, "M/d/yyyy h:mm:ss");
+//            jLabel2.setText(jLabel2.getText() + order.getFormattedDate("M/d/yyyy h:mm:ss a"));
         } catch(ParseException ex){
-            JOptionPane.showMessageDialog(this, "Sorry you must enter date in format M/dd/yyyy");
+            JOptionPane.showMessageDialog(this, "Sorry you must enter date in format M/d/yyyy h:mm:ss");
             return;
         }
+//        dateDiff.setHoursAndMinutesDiffernce();
+        String result = dateDiff.toString();
+        jLabel2.setText(result);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void startDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startDateActionPerformed
@@ -130,38 +133,38 @@ public class SimpleDateWindow extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SimpleDateWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SimpleDateWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SimpleDateWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SimpleDateWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SimpleDateWindow().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(SimpleDateWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(SimpleDateWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(SimpleDateWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(SimpleDateWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new SimpleDateWindow().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField endDate;
