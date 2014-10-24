@@ -7,6 +7,7 @@
 package lab3;
 
 import java.text.ParseException;
+import java.time.format.DateTimeParseException;
 import javax.swing.JOptionPane;
 
 /**
@@ -114,7 +115,7 @@ public class SimpleDateWindow extends javax.swing.JFrame {
         String dateEndValue = endDate.getText();
         try{
             dateDiff.setDateTimes(dateStartValue, dateEndValue, "M/d/yyyy h:mm:ss");
-        } catch(NullPointerException ex){
+        } catch(DateTimeParseException ex){
             JOptionPane.showMessageDialog(this, "Sorry you must enter date in format M/d/yyyy h:mm:ss");
             return;
         }
