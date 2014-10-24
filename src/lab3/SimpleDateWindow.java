@@ -117,7 +117,7 @@ public class SimpleDateWindow extends javax.swing.JFrame {
             dateDiff.setDateTimes(dateStartValue, dateEndValue, "M/d/yyyy h:mm:ss");
 //            end.setStringToEndDate(dateEndValue, "M/d/yyyy h:mm:ss");
 //            jLabel2.setText(jLabel2.getText() + order.getFormattedDate("M/d/yyyy h:mm:ss a"));
-        } catch(ParseException ex){
+        } catch(NullPointerException ex){
             JOptionPane.showMessageDialog(this, "Sorry you must enter date in format M/d/yyyy h:mm:ss");
             return;
         }
