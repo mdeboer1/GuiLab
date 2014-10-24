@@ -11,7 +11,8 @@ import static java.time.temporal.ChronoUnit.HOURS;
 import static java.time.temporal.ChronoUnit.MINUTES;
 
 /**
- *
+ * This is the class that determines the difference in hours and minutes between
+ * 2 dates supplied by the GUI class and uses Java 8 API Date/Time.
  * @author mdeboer1
  */
 public class DateDifference {
